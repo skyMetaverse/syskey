@@ -1,0 +1,357 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Subspace激励性测试网Gemini 3H节点运行教程 | syskey</title>
+<link rel="shortcut icon" href="https://syskey-bice.vercel.app/favicon.ico?v=1710310250456">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://syskey-bice.vercel.app/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="Subspace激励性测试网Gemini 3H节点运行教程 | syskey - Atom Feed" href="https://syskey-bice.vercel.app/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="版本亮点
+禁用农场功能，直到它对所有人开放
+不再需要使用```--farm-during-initial-plotting false```
+改进节点上的CLI默认设置
+无需再指定```--blocks-pruning```和```--st..." />
+    <meta name="keywords" content="硬盘挖矿" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.5.1/build/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://syskey-bice.vercel.app">
+  <img class="avatar" src="https://syskey-bice.vercel.app/images/avatar.png?v=1710310250456" alt="">
+  </a>
+  <h1 class="site-title">
+    syskey
+  </h1>
+  <p class="site-description">
+    记录节点类项目的文字教程
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              Subspace激励性测试网Gemini 3H节点运行教程
+            </h2>
+            <div class="post-info">
+              <span>
+                2024-02-06
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+                <a href="https://syskey-bice.vercel.app/tag/WKJsC0B2U/" class="post-tag">
+                  # 硬盘挖矿
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://syskey-bice.vercel.app/post-images/subspace.jpeg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content" v-pre>
+                <h2 id="版本亮点">版本亮点</h2>
+<pre><code>禁用农场功能，直到它对所有人开放
+不再需要使用```--farm-during-initial-plotting false```
+改进节点上的CLI默认设置
+无需再指定```--blocks-pruning```和```--state-pruning```给农民
+</code></pre>
+<!-- more -->
+<h2 id="系统要求">系统要求​</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Hardware</th>
+<th style="text-align:center">Specs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">CPU</td>
+<td style="text-align:center">4 Core+</td>
+</tr>
+<tr>
+<td style="text-align:center">RAM</td>
+<td style="text-align:center">8GB+</td>
+</tr>
+<tr>
+<td style="text-align:center">SWAP</td>
+<td style="text-align:center">4GB</td>
+</tr>
+<tr>
+<td style="text-align:center">Storage</td>
+<td style="text-align:center">100GB SSD</td>
+</tr>
+</tbody>
+</table>
+<h2 id="钱包设置">钱包设置</h2>
+<p>在运行任何东西之前，您需要有一个钱包，您可以在其中接收测试网硬币。目前我们建议使用两种钱包，SubWallet 是首选途径。</p>
+<ul>
+<li><a href="https://subwallet.app/">SubWallet  子钱包</a></li>
+<li><a href="https://polkadot.js.org/extension/">PolkadotJS  波卡JS</a></li>
+</ul>
+<p>将上述两个钱包的任意一个安装到您的浏览器中，并在其中创建一个新帐户。创建过程比较简单基本和Metamask无异，创建完成后请<font color=red><strong>一定要保存好钱包助记词</strong></font>。创建钱包的示例可以参考<a href="https://forum.subspace.network/t/subspace-wallet/61">这篇教程</a>。</p>
+<h2 id="安装节点">安装节点</h2>
+<p>我们的GitHub上的<a href="https://github.com/subspace/subspace/releases">Releases</a>部分是获取最新二进制版本发布和查看源代码的最佳地方。</p>
+<p>Subspace-Node - 这是实际与Subspace网络建立连接的可执行文件。<br>
+Subspace-Farmer - 这是实际在您分配的存储区块上进行奖励耕作的可执行文件。</p>
+<h3 id="step-1-下载高级-cli-可执行文件">Step 1: 下载高级 CLI 可执行文件</h3>
+<p>老架构CPU版本：</p>
+<ul>
+<li><a href="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-feb-05">Node</a></li>
+<li><a href="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-feb-05">Farmer</a></li>
+</ul>
+<p>新架构CPU版本：</p>
+<ul>
+<li><a href="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-node-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05">Node</a></li>
+<li><a href="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-farmer-ubuntu-x86_64-skylake-gemini-3h-2024-feb-05">Farmer</a></li>
+</ul>
+<p>ARM版本的CPU：</p>
+<ul>
+<li><a href="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-node-ubuntu-aarch64-gemini-3h-2024-feb-05">Node</a></li>
+<li><a href="https://github.com/subspace/subspace/releases/download/gemini-3h-2024-feb-05/subspace-farmer-ubuntu-aarch64-gemini-3h-2024-feb-05">Farmer</a></li>
+</ul>
+<p>可以根据自己的CPU版本来选择适合自己系统的可执行文件。另外，磁盘必须为固态硬盘，HDD已经不被支持了。</p>
+<h3 id="step-2-启动高级-cli-节点">Step 2: 启动高级 CLI 节点​</h3>
+<p>下面将以老架构CPU的版本做演示。</p>
+<p>为node和farmer添加可执行权限</p>
+<pre><code>chmod +x subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-feb-05
+chmod +x subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-feb-05
+</code></pre>
+<p>启动node</p>
+<p>将 INSERT_YOUR_ID 替换为自己的名字</p>
+<pre><code>screen -S subspaceNode
+
+./subspace-node-ubuntu-x86_64-v2-gemini-3h-2024-feb-05 run \
+    --chain gemini-3h \
+    --base-path NODE_DATA_PATH \
+    --farmer \
+    --name &quot;INSERT_YOUR_ID&quot;
+</code></pre>
+<p>执行之后，您应该在终端中看到下面类似的内容：</p>
+<pre><code>2022-02-03 10:52:23 Subspace
+2022-02-03 10:52:23 ✌️  version 0.1.0-35cf6f5-x86_64-ubuntu
+2022-02-03 10:52:23 ❤️  by Subspace Labs &lt;https://subspace.network&gt;, 2021-2022
+2022-02-03 10:52:23 📋 Chain specification: Subspace Gemini 1
+2022-02-03 10:52:23 🏷  Node name: YOUR_FANCY_NAME
+2022-02-03 10:52:23 👤 Role: AUTHORITY
+2022-02-03 10:52:23 💾 Database: RocksDb at /home/X/.local/share/subspace-node-x86_64-ubuntu-20.04-snapshot-2022-jan-05/chains/subspace_test/db/full
+2022-02-03 10:52:23 ⛓  Native runtime: subspace-100 (subspace-1.tx1.au1)
+2022-02-03 10:52:23 🔨 Initializing Genesis block/state (state: 0x22a5…17ea, header-hash: 0x6ada…0d38)
+2022-02-03 10:52:24 ⏱  Loaded block-time = 1s from block 0x6ada0792ea62bf3501abc87d92e1ce0e78ddefba66f02973de54144d12ed0d38
+2022-02-03 10:52:24 Starting archiving from genesis
+2022-02-03 10:52:24 Archiving already produced blocks 0..=0
+2022-02-03 10:52:24 🏷  Local node identity is: 12D3KooWBgKtea7MVvraeNyxdPF935pToq1x9VjR1rDeNH1qecXu
+2022-02-03 10:52:24 🧑‍🌾 Starting Subspace Authorship worker
+2022-02-03 10:52:24 📦 Highest known block at #0
+2022-02-03 10:52:24 〽️ Prometheus exporter started at 127.0.0.1:9615
+2022-02-03 10:52:24 Listening for new connections on 0.0.0.0:9944.
+2022-02-03 10:52:26 🔍 Discovered new external address for our node: /ip4/176.233.17.199/tcp/30333/p2p/12D3KooWBgKtea7MVvraeNyxdPF935pToq1x9VjR1rDeNH1qecXu
+2022-02-03 10:52:29 ⚙️  Syncing, target=#215883 (2 peers), best: #55 (0xafc7…bccf), finalized #0 (0x6ada…0d38), ⬇ 850.1kiB/s ⬆ 1.5kiB/s
+</code></pre>
+<p><code>Ctrl + A + D</code> 退出screen。</p>
+<h3 id="step-3-启动高级-cli-farmer">Step 3: 启动高级 CLI Farmer</h3>
+<p>将 <code>PATH_TO_FARM</code> 修改为你想绘图的路径<br>
+将 <code>PLOT_SIZE</code> 修改为想要绘图的磁盘大小<br>
+将<code>WALLET_ADDRESS</code> 修改为自己的钱包地址</p>
+<pre><code>screen -S subspaceFarmer
+
+./subspace-farmer-ubuntu-x86_64-v2-gemini-3h-2024-feb-05 farm --reward-address WALLET_ADDRESS path=PATH_TO_FARM,size=PLOT_SIZE
+</code></pre>
+<p>执行之后，您应该在终端中看到下面类似的内容：</p>
+<pre><code>2022-06-02T00:02:04.552120Z  INFO subspace_farmer::commands::farm: Connecting to node at ws://127.0.0.1:9944
+2022-06-02T00:02:04.557220Z  INFO jsonrpsee_client_transport::ws: Connection established to target: Target sockaddrs: , host: &quot;127.0.0.1&quot;, host_header: &quot;127.0.0.1:9944&quot;, _mode: Plain, path_and_query: &quot;/&quot;
+2022-06-02T00:02:04.575669Z  INFO subspace_farmer::commands::farm: Opening object mapping
+2022-06-02T00:02:04.617553Z  INFO subspace_farmer::multi_farming: Opening plot
+2022-06-02T00:02:04.645422Z  INFO subspace_farmer::multi_farming: Opening commitments
+2022-06-02T00:02:04.666925Z  INFO subspace_farmer::farming: Subscribing to slot info notifications
+2022-06-02T00:02:04.688218Z  INFO subspace_farmer::archiving: Subscribing to archived segments
+2022-06-02T00:02:04.689129Z  INFO subspace_farmer::commands::farm: WS RPC server listening on 127.0.0.1:9955
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=0
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=1
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=2
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=3
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=4
+2022-06-02T00:02:09.492868Z  INFO subspace_farmer::archiving: Plotted segment segment_index=5
+</code></pre>
+<p><code>Ctrl + A + D</code> 退出screen。</p>
+<p>您现在开始耕作了！只需等待节点完全同步，并且您的农场主完成全部绘图。</p>
+<h2 id="提示与技巧">提示与技巧</h2>
+<h3 id="telemetry-block-explorer">Telemetry &amp; Block Explorer</h3>
+<ul>
+<li><a href="https://telemetry.subspace.network/">Telemetry Server</a>：实时了解网络活动和性能指标。非常适合监控Subspace Network的整体健康状况和状态。</li>
+<li><a href="https://explorer.subspace.network/">Official Block Explorer:</a>: 我们用于查看子空间网络上的区块、交易和网络活动的主要工具。该浏览器提供直观的界面和详细的信息。</li>
+<li><a href="https://subspace.subscan.io/">Subscan Block Explorer</a>: 另一种区块浏览器，提供区块、交易和网络事件的详细视图。 Subscan 以其用户友好的界面和额外的数据分析功能而闻名。</li>
+<li><a href="https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc-1.gemini-3g.subspace.network%2Fws#/accounts">Polkadot.js Block Explorer</a>: 对于熟悉 Polkadot 生态系统的用户来说，该浏览器提供了使用 Polkadot.js 界面探索子空间网络的无缝体验。</li>
+</ul>
+<h3 id="benchmarking-your-farmer">Benchmarking Your Farmer</h3>
+<p>基准测试可帮助您测试农民针对不同版本的子空间网络的绘图速度。</p>
+<pre><code>./subspace-farmer benchmark audit /path/to/your/plot
+</code></pre>
+<p>帮助您确定农民在审核后有多少时间来提供证据。</p>
+<pre><code>./subspace-farmer benchmark prove /path/to/your/plot
+</code></pre>
+<h3 id="scrubbing-your-farmer">Scrubbing Your Farmer</h3>
+<p>在某些情况下，特别是当 farmer 意外终止或遇到错误时，它可能无法正确重新启动。清理命令通过清理或重置指定的绘图来帮助解决此类问题。</p>
+<pre><code>./subspace-farmer scrub /path/to/your/plot
+</code></pre>
+<h3 id="擦除">擦除</h3>
+<p>如果您之前运行过节点，并且想要切换到新网络，请执行以下步骤，然后再次按照指南进行操作：</p>
+<pre><code># Replace `FARMER_FILE_NAME` with the name of the farmer file you downloaded from releases
+./FARMER_FILE_NAME wipe PATH_TO_FARM
+# Replace `NODE_FILE_NAME` with the name of the node file you downloaded from releases
+./NODE_FILE_NAME wipe NODE_DATA_PATH
+</code></pre>
+<h3 id="docker-擦除">Docker 擦除</h3>
+<p><code>docker compose down -v</code></p>
+<h3 id="常用命令示例">常用命令示例​</h3>
+<p>对于节点和农场主，以下是一些常用的命令：</p>
+<pre><code>显示farmer信息：./FARMER_FILE_NAME info PATH_TO_FARM
+清理farmer错误：./FARMER_FILE_NAME scrub PATH_TO_FARM
+清除所有与farmer相关的数据：./FARMER_FILE_NAME wipe PATH_TO_FARM
+清除所有与node相关的数据：./NODE_FILE_NAME wipe NODE_DATA_PATH
+</code></pre>
+<h2 id="引用资料">引用资料</h2>
+<ul>
+<li><a href="https://docs.subspace.network/docs/pre-release/category/advanced-cli-recommended">官方文档</a></li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li><a href="#%E7%89%88%E6%9C%AC%E4%BA%AE%E7%82%B9">版本亮点</a></li>
+<li><a href="#%E7%B3%BB%E7%BB%9F%E8%A6%81%E6%B1%82">系统要求​</a></li>
+<li><a href="#%E9%92%B1%E5%8C%85%E8%AE%BE%E7%BD%AE">钱包设置</a></li>
+<li><a href="#%E5%AE%89%E8%A3%85%E8%8A%82%E7%82%B9">安装节点</a>
+<ul>
+<li><a href="#step-1-%E4%B8%8B%E8%BD%BD%E9%AB%98%E7%BA%A7-cli-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6">Step 1: 下载高级 CLI 可执行文件</a></li>
+<li><a href="#step-2-%E5%90%AF%E5%8A%A8%E9%AB%98%E7%BA%A7-cli-%E8%8A%82%E7%82%B9">Step 2: 启动高级 CLI 节点​</a></li>
+<li><a href="#step-3-%E5%90%AF%E5%8A%A8%E9%AB%98%E7%BA%A7-cli-farmer">Step 3: 启动高级 CLI Farmer</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8F%90%E7%A4%BA%E4%B8%8E%E6%8A%80%E5%B7%A7">提示与技巧</a>
+<ul>
+<li><a href="#telemetry-block-explorer">Telemetry &amp; Block Explorer</a></li>
+<li><a href="#benchmarking-your-farmer">Benchmarking Your Farmer</a></li>
+<li><a href="#scrubbing-your-farmer">Scrubbing Your Farmer</a></li>
+<li><a href="#%E6%93%A6%E9%99%A4">擦除</a></li>
+<li><a href="#docker-%E6%93%A6%E9%99%A4">Docker 擦除</a></li>
+<li><a href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E7%A4%BA%E4%BE%8B">常用命令示例​</a></li>
+</ul>
+</li>
+<li><a href="#%E5%BC%95%E7%94%A8%E8%B5%84%E6%96%99">引用资料</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> & <a href="https://vercel.com/" target="_blank">Vercel</a>
+  <a class="rss" href="https://syskey-bice.vercel.app/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
